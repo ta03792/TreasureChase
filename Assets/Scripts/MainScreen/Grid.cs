@@ -13,8 +13,8 @@ public class Grid : MonoBehaviour
     
     void Start()
     {
-        rows = 13;
-        cols = 12;
+        rows = 12;
+        cols = 11;
         tilewidth = tile.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
         tileheight = tile.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
         allTiles = new List<GameObject>();
