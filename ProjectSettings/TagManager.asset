@@ -5,11 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Character
-  - UpWall
-  - DownWall
-  - RightWall
-  - LeftWall
-  - Wall
+  - Tile
   layers:
   - Default
   - TransparentFX
