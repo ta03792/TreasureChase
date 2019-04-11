@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d516f8b398cbc3d42914961c15e6bca1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Riky Vampdator Normal
+  fontNames:
+  - Riky Vampdator Normal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9cb3bd762290ce14282dce0263f3a308, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
