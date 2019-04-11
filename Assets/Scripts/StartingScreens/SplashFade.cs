@@ -18,7 +18,7 @@ public class SplashFade : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         FadeOut();
         yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene("MainScreen");
+        SceneManager.LoadScene("MainMenu");
 
 
     }
