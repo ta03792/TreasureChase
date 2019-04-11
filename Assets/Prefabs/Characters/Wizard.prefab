@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7488300099377820189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.439, y: -0.64, z: -0.1}
-  m_LocalScale: {x: 0.489, y: 0.519, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!50 &2620212616043627477
 Rigidbody2D:
@@ -133,9 +133,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.098870516, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8744063
+  m_Radius: 0.50036633
 --- !u!114 &866508850618737828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,9 +143,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7488300099377820189}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e1ad8fd3ed3a4438bcd4de163a949c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
