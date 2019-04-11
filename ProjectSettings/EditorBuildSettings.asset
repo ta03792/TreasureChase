@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Splash.unity
     guid: cedf21834259f4e499337ed11124ec26
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: cde4518e0c43fbb43b263aee099f2f1d
+  - enabled: 1
     path: Assets/Scenes/MainScreen.unity
     guid: 3a6be1a8befdadf43ad3d94dbdc1d92f
   - enabled: 1
     path: Assets/Scenes/CharacterScreen.unity
     guid: 46cda7e68d6cfb9468c204cf6f9d002c
-  - enabled: 1
-    path: Assets/Scenes/MainGameScreen.unity
-    guid: c798135d7c3d4174c9a47e780a44529d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/FightScreen.unity
     guid: 50918a56b2c441349b1574e4eed22972
