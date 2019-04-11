@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7530214217902001668}
   - component: {fileID: 1397910202280462431}
   - component: {fileID: 5129752961705666799}
-  - component: {fileID: 8845585630142003956}
   - component: {fileID: 4907670152319417265}
-  - component: {fileID: 8504582959702424011}
+  - component: {fileID: 572754294491183301}
+  - component: {fileID: 137563367943517884}
   m_Layer: 8
   m_Name: Pirate
   m_TagString: Character
@@ -104,22 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &8845585630142003956
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6142429748288794839}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08955771}
-  serializedVersion: 2
-  m_Radius: 0.70470446
 --- !u!114 &4907670152319417265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,16 +120,32 @@ MonoBehaviour:
   Defence: 3
   Agility: 2
   Luck: 3
---- !u!114 &8504582959702424011
+--- !u!114 &572754294491183301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6142429748288794839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677ce2b8527bb614e8a0e062febe6575, type: 3}
+  m_Script: {fileID: 11500000, guid: f0e1ad8fd3ed3a4438bcd4de163a949c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  moveSpeed: 4
+--- !u!58 &137563367943517884
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142429748288794839}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.75592613

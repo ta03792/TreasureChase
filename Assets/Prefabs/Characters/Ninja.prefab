@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6812226570879183438}
   - component: {fileID: 2771378980663688479}
-  - component: {fileID: 8175964906272612857}
   - component: {fileID: 8122458526622867534}
   - component: {fileID: 6270130768392774967}
-  - component: {fileID: 8115986675902509090}
+  - component: {fileID: 2532745191972967287}
+  - component: {fileID: 1895777626394556135}
   m_Layer: 8
   m_Name: Ninja
   m_TagString: Character
@@ -83,22 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8175964906272612857
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8871361731558488431}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.1095736, y: 0.48728076}
-  serializedVersion: 2
-  m_Radius: 0.94370276
 --- !u!114 &8122458526622867534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +120,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8115986675902509090
+--- !u!58 &2532745191972967287
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871361731558488431}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.0189904
+--- !u!114 &1895777626394556135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8871361731558488431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677ce2b8527bb614e8a0e062febe6575, type: 3}
+  m_Script: {fileID: 11500000, guid: f0e1ad8fd3ed3a4438bcd4de163a949c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  moveSpeed: 4
