@@ -1,4 +1,70 @@
-﻿using System;
+﻿using System.Collections;
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
+internal sealed class AI : MonoBehaviour
+{
+    private static readonly Vector2[] MovementChoices = new Vector2[]
+    {
+        Vector2.up,
+        Vector2.down,
+        Vector2.left,
+        Vector2.right,
+    };
+
+    private Rigidbody2D rb;
+    private Vector2 movementDirection;
+
+    private void Awake()
+    {
+        this.rb = this.GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        this.StartCoroutine(this.ChangeDirectionContinuously());
+    }
+
+    private void Update()
+    {
+        this.rb.velocity = this.movementDirection * 2f;
+    }
+
+    private IEnumerator ChangeDirectionContinuously()
+    {
+        while (true)
+        {
+            this.movementDirection = MovementChoices[Random.Range(0, MovementChoices.Length)];
+            yield return new WaitForSeconds(2f);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,32 +90,47 @@ public class AI : MonoBehaviour
         float tileSize = GetComponent<LevelManager>().TileSize;
     }
 
-    private void Update()
+    private void Start()
     {
-        Movement();
+        this.StartCoroutine(this.ChangeDirectionContinuously());
     }
 
-    /*  private readonly Vector2[] MovementChoices = new Vector2[]
+    private void Update()
     {
-        Vector2.up,
-        Vector2.down,
-        Vector2.left,
-        Vector2.right,
-    }; 
+        this.rb.velocity = this.movementDirection;
+    }
 
-        private void Update()
+    private IEnumerator ChangeDirectionContinuously()
+    {
+        while (true)
         {
-            // Click to see next move 
-            if (Input.GetButtonDown("Fire1"))
-            {
-                int choiceIndex = Random.Range(0, this.MovementChoices.Length);
-                var movement = this.MovementChoices[choiceIndex];
-            }
+            this.movementDirection = MovementChoices[Random.Range(0, MovementChoices.Length)];
+            yield return new WaitForSeconds(1f);
         }
-    }*/
+    }
+}
+
+/*  private readonly Vector2[] MovementChoices = new Vector2[]
+{
+    Vector2.up,
+    Vector2.down,
+    Vector2.left,
+    Vector2.right,
+}; 
+
+    private void Update()
+    {
+        // Click to see next move 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            int choiceIndex = Random.Range(0, this.MovementChoices.Length);
+            var movement = this.MovementChoices[choiceIndex];
+        }
+    }
+}
 
 
-    private void Movement()
+private void Movement()
     {
         int move = UnityEngine.Random.Range(0, 4);
         if (move == 0)
@@ -136,4 +217,4 @@ public class AI : MonoBehaviour
             }
         }
     }
-}
+}*/
