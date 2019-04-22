@@ -8,16 +8,29 @@ public class SceneLoader : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
 
-    }
-    public void LoadPreviousScene()
+    public void Continue()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex - 1);
+        SceneManager.LoadScene("MainScreen");
     }
+    public void NewGame()
+    {
+        SceneManager.LoadScene("CharacterScreen");
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+   
     public void LoadStartScene()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void MainScreen()
+    {
+        SceneManager.LoadScene("MainScreen");
     }
 
     public void ExitScreen()

@@ -31,7 +31,6 @@ public class PlayerLogic : MonoBehaviour
         velX = Input.GetAxisRaw("Horizontal");
         velY = Input.GetAxisRaw("Vertical");
         rb2D.velocity = new Vector2(velX * moveSpeed,moveSpeed*velY);
-        OffScreen();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,26 +38,6 @@ public class PlayerLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Character"))
         {
             SceneManager.LoadScene(levelname);
-        }
-    }
-
-    private void OffScreen()            // ensures player doesn't go offscreen
-    {
-        if (transform.position.x < minX)
-        {
-            transform.position = new Vector2(minX, transform.position.y);
-        }
-        if (transform.position.x > maxX)
-        {
-            transform.position = new Vector2(maxX, transform.position.y);
-        }
-        if (transform.position.y > maxY)
-        {
-            transform.position = new Vector2(transform.position.x, maxY);
-        }
-        if (transform.position.y < minY)
-        {
-            transform.position = new Vector2(transform.position.x, minY);
         }
     }
 }

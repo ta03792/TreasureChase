@@ -2,12 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Point
+public struct Point
 {
+    public int X { get; set; }
 
-    private float x;
-    private float y;
+    public int Y { get; set; }
 
-    public float X { get => x; set => x = value; }
-    public float Y { get => y; set => y = value; }
+    public Point(int x, int y)
+    {
+        this.X = x;
+        this.Y = y;
+    }
+
+    public static bool operator ==(Point first, Point second)
+    {
+        return first.X == second.X && first.Y == second.Y; 
+    }
+    public static bool operator !=(Point first, Point second)
+    {
+        return first.X != second.X || first.Y != second.Y;
+    }
 }

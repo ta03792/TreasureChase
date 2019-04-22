@@ -16,5 +16,4 @@ public class Health : MonoBehaviour
     {
         healthText.text = health.ToString();
     }
-
 }
