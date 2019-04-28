@@ -16,10 +16,16 @@ public struct Point
 
     public static bool operator ==(Point first, Point second)
     {
-        return first.X == second.X && first.Y == second.Y; 
+        return first.X == second.X && first.Y == second.Y;
     }
     public static bool operator !=(Point first, Point second)
     {
         return first.X != second.X || first.Y != second.Y;
     }
+
+    public static Point operator -(Point x, Point y)
+    {
+        return new Point(x.X - y.X, x.Y - y.Y);
+    }
+
 }

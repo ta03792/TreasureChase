@@ -79,9 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'F:
-
-'
+  m_Text: "F: \n"
 --- !u!114 &4833896702600901166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,9 +174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'G:
-
-'
+  m_Text: "G: \n"
 --- !u!114 &789223376044527330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'H:'
+  m_Text: 'H: '
 --- !u!114 &255611226175728198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +393,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -1934958187
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &7000340213877987778
 MonoBehaviour:

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class LevelManager : Singleton<LevelManager>
 {
+
     [SerializeField]
     private GameObject
         ninjaPrefab,
@@ -18,6 +20,7 @@ public class LevelManager : Singleton<LevelManager>
     private Point LevelSize;
 
     public Dictionary<Point, Tile> Tiles { get; set; }
+   
 
     public float TileSize
     {
@@ -31,16 +34,10 @@ public class LevelManager : Singleton<LevelManager>
     void Start()
     {
         LevelSize = new Point(11,12);
-        CreateLevel();        
+        CreateLevel();
+        PlacePlayers();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    
     private void CreateLevel()
     {
         Tiles = new Dictionary<Point, Tile>();
@@ -74,6 +71,8 @@ public class LevelManager : Singleton<LevelManager>
         newTile.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(2.850601f + worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0),true);
 
         Tiles.Add(new Point(x, y), newTile);
+
+        Debug.Log("PlacingTiles: " + x + "," + y);
     }
 
 
@@ -84,29 +83,26 @@ public class LevelManager : Singleton<LevelManager>
         newTile.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(2.850601f + worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0),false);
 
         Tiles.Add(new Point(x, y), newTile);
+
+        Debug.Log("PlacingTiles: " + x + "," + y);
     }
 
     public bool InBounds(Point position)
     {
         return position.X >= 0 && position.Y >= 0 && position.X < LevelSize.X && position.Y < LevelSize.Y;
     }
-}
 
 
-/*private void PlacePlayers()
-    {
-    // private Tile[,] allTiles;
-        //    PlacePlayers();
-        PlaceNinja();
-        PlacePirate();
-        PlaceWizard();
-        PlaceBarbarian();
-    }
 
     private void PlaceCharacter(int x, int y, GameObject prefab)
     {
         GameObject instance = Instantiate(prefab);
-        instance.transform.position = allTiles[x, y].transform.position;
+        instance.transform.position = Tiles[new Point(x, y)].transform.position;
+        if(prefab.GetComponent<Character>() != null)
+        {
+            prefab.GetComponent<Character>().GridPosition = new Point(x, y);
+        }
+        Debug.Log("Placing Characters:" + x + "," + y);
     }
 
     private void PlaceNinja()
@@ -122,8 +118,15 @@ public class LevelManager : Singleton<LevelManager>
     {
         PlaceCharacter(0, 10, wizardPrefab);
     }
-//allTiles = new Tile[12, 11];
-    private void PlaceBarbarian()
+    private void PlaceBarbarian()   
     {
         PlaceCharacter(11, 10, barbarianPrefab);
-    }*/
+    }
+    private void PlacePlayers()
+    {
+        PlaceNinja();
+        PlacePirate();
+        PlaceWizard();
+        PlaceBarbarian();
+    }
+}

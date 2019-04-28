@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6531333064925961390}
   - component: {fileID: 7494625848416874286}
-  - component: {fileID: 1106342075704533733}
+  - component: {fileID: 1768781357655080090}
   - component: {fileID: 9069191157575193217}
   m_Layer: 0
   m_Name: Grass
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1106342075704533733
+--- !u!61 &1768781357655080090
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

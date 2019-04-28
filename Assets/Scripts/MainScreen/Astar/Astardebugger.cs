@@ -46,27 +46,28 @@ public class Astardebugger : MonoBehaviour
                     if(start == null)
                     {
                         start = tmp;
-                        CreateDebugTile(start.WorldPosition, new Color32(255, 135, 0, 255));                    }
+                        CreateDebugTile(start.WorldPosition, new Color32(255, 135, 0, 255));                    
+                        Debug.Log(tmp.GetComponent<Tile>().GridPosition.X + " , " + tmp.GetComponent<Tile>().GridPosition.Y);
+                    }
 
                     else if(goal == null)
                     {
                         goal = tmp;
-                        CreateDebugTile(goal.WorldPosition, new Color32(255, 0, 0, 255));
+                        CreateDebugTile(goal.WorldPosition, new Color32(25, 0, 0, 255));
+                        Debug.Log(tmp.GetComponent<Tile>().GridPosition.X + " , " +  tmp.GetComponent<Tile>().GridPosition.Y);
                     }
                 }
             }
         }
     }
 
-    public void DebugPath(HashSet<Node> openList, HashSet<Node> closedList)
+    public void DebugPath(HashSet<Node> openList, HashSet<Node> closedList,Stack<Node> path)
     {
         foreach (Node node in openList)
         {
-            if(node.TileRef != start)
+            if(node.TileRef != start && node.TileRef != goal)
             {
                 CreateDebugTile(node.TileRef.WorldPosition, Color.cyan,node);
-
-
             }
 
             PointtoParent(node,node.TileRef.WorldPosition);
@@ -74,9 +75,18 @@ public class Astardebugger : MonoBehaviour
 
         foreach (Node node in closedList)
         {
-            if (node.TileRef != start && node.TileRef != goal)
+            if (node.TileRef != start && node.TileRef != goal && !path.Contains(node))
             {
                 CreateDebugTile(node.TileRef.WorldPosition, Color.red,node);
+            }
+            PointtoParent(node, node.TileRef.WorldPosition);
+        }
+
+        foreach (Node node in path)
+        {
+            if(node.TileRef != start && node.TileRef != goal)
+            {
+                CreateDebugTile(node.TileRef.WorldPosition, Color.green, node);
             }
         }
     }
@@ -147,6 +157,4 @@ public class Astardebugger : MonoBehaviour
 
         debugTile.GetComponent<SpriteRenderer>().color = color;
     }
-
-    
 }

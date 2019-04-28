@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2620212616043627477}
   - component: {fileID: 7900562288719257862}
   - component: {fileID: 9067421402593536906}
-  - component: {fileID: 866508850618737828}
+  - component: {fileID: 5917084895193004435}
   m_Layer: 8
   m_Name: Wizard
   m_TagString: Character
@@ -91,7 +91,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7488300099377820189}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7900562288719257862
 MonoBehaviour:
@@ -131,12 +131,12 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.098870516, y: 0}
   serializedVersion: 2
   m_Radius: 0.50036633
---- !u!114 &866508850618737828
+--- !u!114 &5917084895193004435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e1ad8fd3ed3a4438bcd4de163a949c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 7488300099377820189}
+  speed: 2

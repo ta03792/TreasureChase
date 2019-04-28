@@ -1,10 +1,120 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-internal sealed class AI : MonoBehaviour
+
+public class Character : MonoBehaviour
 {
-    private static readonly Vector2[] MovementChoices = new Vector2[]
+    public GameObject character;    
+
+    [SerializeField]
+    private float speed;
+
+    private Stack<Node> path;
+
+    public Point GridPosition { get; set; }
+
+    private Vector3 destination;
+
+    public Stack<Node> Path
+    {
+        get
+        {
+            Debug.Log("Get Called!");
+            if (path == null)
+            {
+                Debug.Log("Generate!");
+                GeneratePath(this.GridPosition);
+                Debug.Log(path.Count);
+            }
+            return new Stack<Node>(new Stack<Node>(path));
+        }
+    }
+
+    void Start()
+    {
+        Debug.Log("StartPosition:" + this.GridPosition.X + "," + this.GridPosition.Y);
+        SetPath(Path);
+    }
+
+    void Update()
+    {
+        StartCoroutine("StartMoving");
+        Move();
+    }
+
+    private IEnumerator StartMoving()
+    {
+        if (path != null && path.Count == 0)
+        {
+            GeneratePath(this.GridPosition);
+            yield return new WaitForSeconds(2.5f);
+        }
+    }
+
+    public void GeneratePath(Point start)
+    {
+        start = this.GridPosition;
+
+        while (true)
+        {
+            int goalx = Random.Range(0, 10);
+            int goaly = Random.Range(0, 11);
+            Debug.Log("GoalTile: " + goalx + "," + goaly);
+
+            if(LevelManager.Instance.Tiles.ContainsKey(new Point(goalx, goaly)) == true)
+            {
+                Debug.Log("Key Found!");
+                Tile goalTile = LevelManager.Instance.Tiles[new Point(goalx, goaly)];
+                if (goalTile.GetComponent<Tile>().Walkable == true)
+                {
+                    path = Astar.GetPath(start, goalTile.GridPosition);
+                    break;
+                }
+            }
+        }
+    }
+
+
+
+    private void Move()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        
+        if (transform.position == destination)
+        {
+            if (path != null && path.Count > 0)
+            {
+                GridPosition = path.Peek().GridPosition;
+                Debug.Log("Character Movement:" + GridPosition.X + " , " + GridPosition.Y);
+                destination = path.Pop().WorldPosition;
+            }
+            
+            if (path != null && path.Count == 0)
+            {
+                path = null;
+                Debug.Log("called again!");
+                GeneratePath(this.GridPosition);
+                SetPath(Path);
+            }
+        }
+    }
+    
+    private void SetPath(Stack<Node> newPath)
+    {
+        if(newPath != null)
+        {
+            this.path = newPath;
+
+            GridPosition = path.Peek().GridPosition;
+            destination = path.Pop().WorldPosition;
+        }
+    }
+}
+
+
+/*
+ * private static readonly Vector2[] MovementChoices = new Vector2[]
     {
         Vector2.up,
         Vector2.down,
@@ -38,33 +148,7 @@ internal sealed class AI : MonoBehaviour
             yield return new WaitForSeconds(2f);
         }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

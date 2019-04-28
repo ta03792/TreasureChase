@@ -27,10 +27,19 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
-        velX = Input.GetAxisRaw("Horizontal");
+    public void MoveVertically()
+    {
         velY = Input.GetAxisRaw("Vertical");
-        rb2D.velocity = new Vector2(velX * moveSpeed,moveSpeed*velY);
+        rb2D.velocity = new Vector2(velX * moveSpeed, moveSpeed * velY);
+    }
+
+    public void MoveHorizontally()
+    {
+        velX = Input.GetAxisRaw("Horizontal");
+        rb2D.velocity = new Vector2(velX * moveSpeed, moveSpeed * velY);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
