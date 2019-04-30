@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.Find("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
 
     }
