@@ -89,13 +89,12 @@ GameObject:
   - component: {fileID: 3127444541449589610}
   - component: {fileID: 6472072835738061029}
   - component: {fileID: 1150293670025021399}
-  - component: {fileID: 6248168742352368042}
   - component: {fileID: 762310397016919007}
+  - component: {fileID: 4844988855509281516}
   - component: {fileID: 1985328086116373965}
-  - component: {fileID: 8488485714498822714}
   m_Layer: 8
   m_Name: Barbarian
-  m_TagString: Character
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,22 +183,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6248168742352368042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200428312294943234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decdffdd8ac47b5438850f16ba70aafa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Strength: 7
-  Defence: 3
-  Agility: 2
-  Luck: 2
 --- !u!114 &762310397016919007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,8 +196,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  levelname: FightScreen
+  health: 0
   joystick: {fileID: 0}
+--- !u!114 &4844988855509281516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200428312294943234}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4675a6bb5365a54f8829f3a26010318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  joystick: {fileID: 0}
+  startTimeBtwShots: 0
+  projectile: {fileID: 0}
 --- !u!58 &1985328086116373965
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -231,16 +230,3 @@ CircleCollider2D:
   m_Offset: {x: 0.9396992, y: 0}
   serializedVersion: 2
   m_Radius: 0.83813643
---- !u!114 &8488485714498822714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200428312294943234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e924df7aeacf74abddbdb142f819c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 0}

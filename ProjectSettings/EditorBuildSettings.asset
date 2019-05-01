@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScreen.unity
     guid: 3a6be1a8befdadf43ad3d94dbdc1d92f
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/NewFightScreen.unity
+    guid: d3cb230c1d17f0a40bcb6f2d50ed8357
   - enabled: 1
     path: Assets/Scenes/FightScreen.unity
     guid: 50918a56b2c441349b1574e4eed22972
