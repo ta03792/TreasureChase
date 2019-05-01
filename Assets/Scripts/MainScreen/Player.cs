@@ -7,16 +7,21 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb2D;
     public float moveSpeed = 3f;
-    public int health;
+    private int health;
+    public int Health { get => health; set => health = value; }
     float velX;
     float velY;
     public Joystick joystick;
 
 
+    void Awake()
+    {
+        Health = 10;    
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        health = 10;
         rb2D = GetComponent<Rigidbody2D>();
         joystick = FindObjectOfType<Joystick>();
     }
@@ -45,9 +50,17 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BearTrap"))
         {
-            health -= 2;
-            GetComponent<HealthScript>().health = this.health;
+            Health -= 2;
+            //GetComponent<HealthScript>().health = this.Health;
         }
         Destroy(collision.gameObject);
+    }
+
+    void Die()
+    {
+        if(Health == 0)
+        {
+            BattleManager.Instance.EndBattle(false);
+        }
     }
 }

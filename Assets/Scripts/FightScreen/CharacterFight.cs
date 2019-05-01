@@ -9,6 +9,8 @@ public class CharacterFight : MonoBehaviour
     public float stoppingDistance;
     public float retreatDistance;
 
+    private int health;
+
     public Transform player;
 
     private float timeBtwShots;
@@ -16,10 +18,15 @@ public class CharacterFight : MonoBehaviour
 
     public GameObject projectile;
 
+    private void Awake()
+    {
+        health = GetComponent<Character>().Health;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         timeBtwShots = startTimeBtwShots;
@@ -52,7 +59,19 @@ public class CharacterFight : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
+        Die();
+    }
 
-        
+    public void Damage()
+    {
+        health -= 1;
+    }
+
+    void Die()
+    {
+        if(health == 0)
+        {
+            BattleManager.Instance.EndBattle(true);
+        }
     }
 }

@@ -2715,7 +2715,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  health: 0
   joystick: {fileID: 0}
 --- !u!1 &1680193734
 GameObject:

@@ -12,16 +12,16 @@ public class PlayerFight : MonoBehaviour
     float velX;
     float velY;
     public Joystick joystick;
-
-    private float timeBtwShots;
-    public float startTimeBtwShots;
-
     public GameObject projectile;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        health = 10;
+    }
     void Start()
     {
-        //health = GetComponents<Player>().health;
         rb2D = GetComponent<Rigidbody2D>();
         joystick = FindObjectOfType<Joystick>();
     }
@@ -32,29 +32,30 @@ public class PlayerFight : MonoBehaviour
         velX = joystick.Horizontal;
         velY = joystick.Vertical;
         rb2D.velocity = new Vector2(velX * moveSpeed, moveSpeed * velY);
-
-        if (timeBtwShots <= 0)
-        {
-    
-            timeBtwShots = startTimeBtwShots;
-        }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
+        Die();
     }
 
     public void Shoot()
     {
-        if (timeBtwShots <= 0)
+        Instantiate(projectile, transform.position, Quaternion.identity);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Hit!");
+        if (collision.CompareTag("Projectile"))
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBtwShots = startTimeBtwShots;
+            health -= 1;
         }
-        else
+    }
+
+    void Die()
+    {
+        if(health <= 0)
         {
-            timeBtwShots -= Time.deltaTime;
-        }
+            BattleManager.Instance.EndBattle(false);
+        }        
     }
 }
 

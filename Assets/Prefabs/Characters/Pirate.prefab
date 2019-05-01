@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5129752961705666799}
   - component: {fileID: 137563367943517884}
   - component: {fileID: 2542283079308994559}
+  - component: {fileID: 8994438756725658807}
   m_Layer: 8
   m_Name: Pirate
   m_TagString: Character
@@ -133,3 +134,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 6142429748288794839}
   speed: 2
+--- !u!114 &8994438756725658807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142429748288794839}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4af424acd4cbd442a1ef8349a947147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  stoppingDistance: 2
+  retreatDistance: 2
+  player: {fileID: 3127444541449589610, guid: c34153160451f7a4b923a0b2876c4990, type: 3}
+  startTimeBtwShots: 1.73
+  projectile: {fileID: 2598227535167946322, guid: 92552f180207d024e90098e279e9a396,
+    type: 3}

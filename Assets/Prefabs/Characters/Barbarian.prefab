@@ -196,7 +196,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  health: 0
   joystick: {fileID: 0}
 --- !u!114 &4844988855509281516
 MonoBehaviour:
@@ -212,8 +211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   joystick: {fileID: 0}
-  startTimeBtwShots: 0
-  projectile: {fileID: 0}
+  projectile: {fileID: 3837945922238535128, guid: c7a35ad9945473c45920ebbc32b10721,
+    type: 3}
 --- !u!58 &1985328086116373965
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -227,6 +226,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9396992, y: 0}
+  m_Offset: {x: 0.55844736, y: 0}
   serializedVersion: 2
-  m_Radius: 0.83813643
+  m_Radius: 0.4568847

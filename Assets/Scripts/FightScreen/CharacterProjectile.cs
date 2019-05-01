@@ -32,10 +32,6 @@ public class CharacterProjectile : MonoBehaviour
         {
             DestroyProjectile();
         }
-        else
-        {
-            Update();
-        }
     }
 
     void DestroyProjectile()

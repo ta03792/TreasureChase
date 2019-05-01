@@ -30,5 +30,8 @@ public class BattleSetup : MonoBehaviour
 
         battle.TokenPlayer.transform.position = this.playerPosition.position;
         battle.TokenCharacter.transform.position = this.characterPosition.position;
+
+        battle.TokenPlayer.GetComponent<PlayerFight>().enabled = true;
+        battle.TokenCharacter.GetComponent<CharacterFight>().enabled = true;
     }
 }

@@ -26,15 +26,13 @@ public class PlayerProjectile : MonoBehaviour
         }
     }
 
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Character"))
         {
+            collision.gameObject.GetComponent<CharacterFight>().Damage();
             DestroyProjectile();
-        }
-        else
-        {
-            Update();
         }
     }
 
