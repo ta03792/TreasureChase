@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000000059605}
-  m_SizeDelta: {x: 337, y: 246.98}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 289, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12424949
 MonoBehaviour:
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 400454643}
   - component: {fileID: 400454642}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Barbarian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 128.3, y: -0.98999}
+  m_AnchoredPosition: {x: 74, y: -0.98999}
   m_SizeDelta: {x: 33.8, y: 25.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400454642
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 1200740071}
   - component: {fileID: 1200740070}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,7 +576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.602, y: -6.7325}
+  m_AnchoredPosition: {x: -34, y: -6.7325}
   m_SizeDelta: {x: 36.805, y: 25.025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200740070
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 1849852568}
   - component: {fileID: 1849852567}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -134, y: -6}
+  m_AnchoredPosition: {x: -80, y: -6}
   m_SizeDelta: {x: 37.16, y: 26.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849852567
@@ -913,7 +913,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -158, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052964894
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 2144902911}
   - component: {fileID: 2144902910}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Pirate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,7 +963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: -5.2649975}
+  m_AnchoredPosition: {x: 14, y: -5.2649975}
   m_SizeDelta: {x: 39.38, y: 25.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144902910

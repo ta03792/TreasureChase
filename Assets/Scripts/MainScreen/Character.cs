@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public GameObject character;    
+    public GameObject character;
+
+    private int health;
 
     [SerializeField]
     private float speed;
@@ -20,12 +22,9 @@ public class Character : MonoBehaviour
     {
         get
         {
-            Debug.Log("Get Called!");
             if (path == null)
             {
-                Debug.Log("Generate!");
                 GeneratePath(this.GridPosition);
-                Debug.Log(path.Count);
             }
             return new Stack<Node>(new Stack<Node>(path));
         }
@@ -33,8 +32,8 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("StartPosition:" + this.GridPosition.X + "," + this.GridPosition.Y);
         SetPath(Path);
+        health = 10;
     }
 
     void Update()
@@ -58,15 +57,11 @@ public class Character : MonoBehaviour
 
         while (true)
         {
-            int goalx = Random.Range(0, 10);
-            int goaly = Random.Range(0, 11);
-            Debug.Log("GoalTile: " + goalx + "," + goaly);
+            Point goalPoint = new Point(Random.Range(0, 14),Random.Range(0, 11));
 
-            if(LevelManager.Instance.Tiles.ContainsKey(new Point(goalx, goaly)) == true)
+            if (LevelManager.Instance.Tiles.TryGetValue(goalPoint, out Tile goalTile))
             {
-                Debug.Log("Key Found!");
-                Tile goalTile = LevelManager.Instance.Tiles[new Point(goalx, goaly)];
-                if (goalTile.GetComponent<Tile>().Walkable == true)
+                if (goalTile.Walkable)
                 {
                     path = Astar.GetPath(start, goalTile.GridPosition);
                     break;
@@ -74,7 +69,6 @@ public class Character : MonoBehaviour
             }
         }
     }
-
 
 
     private void Move()
@@ -86,14 +80,12 @@ public class Character : MonoBehaviour
             if (path != null && path.Count > 0)
             {
                 GridPosition = path.Peek().GridPosition;
-                Debug.Log("Character Movement:" + GridPosition.X + " , " + GridPosition.Y);
                 destination = path.Pop().WorldPosition;
             }
             
             if (path != null && path.Count == 0)
             {
                 path = null;
-                Debug.Log("called again!");
                 GeneratePath(this.GridPosition);
                 SetPath(Path);
             }
@@ -109,6 +101,36 @@ public class Character : MonoBehaviour
             GridPosition = path.Peek().GridPosition;
             destination = path.Pop().WorldPosition;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Character"))
+        {
+            int random = Random.Range(0,11);
+                
+            if(random <= 5)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
+    private void Die()
+    {
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("BearTrap"))
+        {
+            health -= 2;
+        }
+        Destroy(collision.gameObject);
     }
 }
 

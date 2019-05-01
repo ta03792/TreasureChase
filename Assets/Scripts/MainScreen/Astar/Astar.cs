@@ -43,6 +43,8 @@ public static class Astar
                 for (int y = -1; y <= 1; y++)
                 {
                     Point neighbourPos = new Point(currentNode.GridPosition.X - x, currentNode.GridPosition.Y - y);
+
+                    //Debug.Log("NeighBour Position: " + (currentNode.GridPosition.X - x) + " , " + (currentNode.GridPosition.Y - y));
                     
                     if (LevelManager.Instance.InBounds(neighbourPos) && LevelManager.Instance.Tiles[neighbourPos].Walkable && neighbourPos != currentNode.GridPosition)
                     {
@@ -81,6 +83,7 @@ public static class Astar
 
             openList.Remove(currentNode);
             closedList.Add(currentNode);
+
             if (openList.Count > 0)
             {
                 currentNode = openList.OrderBy(n => n.F).First();

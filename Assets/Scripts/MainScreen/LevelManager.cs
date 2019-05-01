@@ -10,12 +10,15 @@ public class LevelManager : Singleton<LevelManager>
         ninjaPrefab,
         piratePrefab,
         wizardPrefab,
-        barbarianPrefab;
+        barbarianPrefab;    
+
+    private int number_of_traps;
 
     [SerializeField]
     private Tile
         tilePrefab,
-        obstaclePrefab;
+        obstaclePrefab,
+        beartrap;
 
     private Point LevelSize;
 
@@ -33,7 +36,8 @@ public class LevelManager : Singleton<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-        LevelSize = new Point(11,12);
+        number_of_traps = 0;
+        LevelSize = new Point(15,11);
         CreateLevel();
         PlacePlayers();
     }
@@ -44,9 +48,9 @@ public class LevelManager : Singleton<LevelManager>
 
         Vector3 WorldStart = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
 
-        for (int y = 0; y < 11; y++)
+        for (int y = 0; y < LevelSize.Y; y++)
         {
-            for (int x = 0; x < 12; x++)
+            for (int x = 0; x < LevelSize.X; x++)
             {
                 if (y == 10)
                 {
@@ -55,6 +59,11 @@ public class LevelManager : Singleton<LevelManager>
                 else if (x % 2 == 0 || y % 2 == 0)
                 {
                     PlaceTile(x, y, WorldStart,tilePrefab);
+                    if(Random.Range(0,20) == 1 && number_of_traps <= 9 )
+                    {
+                        PlaceHazards(x, y, WorldStart, beartrap);
+                        number_of_traps += 1;
+                    }
                 }
                 else
                 {
@@ -68,11 +77,9 @@ public class LevelManager : Singleton<LevelManager>
     {
         Tile newTile = Instantiate(prefab.gameObject.GetComponent<Tile>());
 
-        newTile.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(2.850601f + worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0),true);
+            newTile.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0),true);
 
         Tiles.Add(new Point(x, y), newTile);
-
-        Debug.Log("PlacingTiles: " + x + "," + y);
     }
 
 
@@ -80,12 +87,25 @@ public class LevelManager : Singleton<LevelManager>
     {
         Tile newTile = Instantiate(prefab.gameObject.GetComponent<Tile>());
 
-        newTile.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(2.850601f + worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0),false);
+        newTile.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0),false);
 
         Tiles.Add(new Point(x, y), newTile);
-
-        Debug.Log("PlacingTiles: " + x + "," + y);
     }
+
+    private void PlaceHazards(int x, int y, Vector3 worldStart, Tile hazard)
+    {
+        Tile beartrap = Instantiate(hazard.gameObject.GetComponent<Tile>());
+
+        beartrap.GetComponent<Tile>().Setup(new Point(x, y), new Vector3(worldStart.x + TileSize / 2 + (TileSize * x), worldStart.y - TileSize / 2 - (TileSize * y), 0), true);
+    }
+
+    /*private void CheckHazards()
+    {
+        if(number_of_traps == 5)
+        {
+            PlaceHazards(int x, int y, Vector3 worldStart, GameObject hazard);
+        }
+    }*/
 
     public bool InBounds(Point position)
     {
@@ -93,16 +113,20 @@ public class LevelManager : Singleton<LevelManager>
     }
 
 
-
     private void PlaceCharacter(int x, int y, GameObject prefab)
     {
+        var targetTile = Tiles[new Point(x, y)];
+
         GameObject instance = Instantiate(prefab);
-        instance.transform.position = Tiles[new Point(x, y)].transform.position;
-        if(prefab.GetComponent<Character>() != null)
+        instance.transform.position = targetTile.transform.position; // Maybe you should use targetTile.WorldPosition (I don't know)
+
+        var character = instance.GetComponent<Character>();
+        if (character)
         {
-            prefab.GetComponent<Character>().GridPosition = new Point(x, y);
+            character.GridPosition = targetTile.GridPosition;
         }
-        Debug.Log("Placing Characters:" + x + "," + y);
+
+        //Debug.Log("Placing Characters:" + x + "," + y);
     }
 
     private void PlaceNinja()
@@ -111,7 +135,7 @@ public class LevelManager : Singleton<LevelManager>
     }
     private void PlacePirate()
     {
-        PlaceCharacter(11, 0, piratePrefab);
+        PlaceCharacter(13, 0, piratePrefab);
     }
 
     private void PlaceWizard()
@@ -120,7 +144,7 @@ public class LevelManager : Singleton<LevelManager>
     }
     private void PlaceBarbarian()   
     {
-        PlaceCharacter(11, 10, barbarianPrefab);
+        PlaceCharacter(13, 10, barbarianPrefab);
     }
     private void PlacePlayers()
     {
