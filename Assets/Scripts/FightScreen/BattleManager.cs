@@ -20,6 +20,8 @@ internal sealed class BattleManager : MonoBehaviour
     public bool HasActiveBattle { get; private set; }
     public Battle CurrentBattle { get; private set; }
 
+    public static bool Exists => instance;
+
     public static BattleManager Instance
     {
         get

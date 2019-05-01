@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
         if (character)
         {
-            SceneManager.LoadScene("FightScreen");
+            BattleManager.Instance.StartBattle(this, character);
         }
     }
 

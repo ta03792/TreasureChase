@@ -14,7 +14,11 @@ public class BattleSetup : MonoBehaviour
 
     private void OnDisable()
     {
-        BattleManager.Instance.BattleStarted -= this.OnBattleStarted;
+        // Without this check, an instance of BattleManager might be instantiated when the game closes
+        if (BattleManager.Exists)
+        {
+            BattleManager.Instance.BattleStarted -= this.OnBattleStarted;
+        }
     }
 
     private void OnBattleStarted()
