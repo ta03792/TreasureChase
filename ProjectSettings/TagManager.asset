@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Character
-  - Tile
   - BearTrap
-  - Projectile
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -17,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - Unit
-  - Cell
+  - 
+  - 
   - 
   - 
   - 
@@ -46,11 +45,8 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Cell
-    uniqueID: 2360009109
+    uniqueID: 2414761215
     locked: 0
   - name: Unit
-    uniqueID: 470037577
-    locked: 0
-  - name: Canvas
-    uniqueID: 1147437165
+    uniqueID: 2797706979
     locked: 0

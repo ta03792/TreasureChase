@@ -11,6 +11,8 @@ public class SplashFade : MonoBehaviour
 
 
     // Use this for initialization
+
+
     IEnumerator Start()
     {
         splashImage.canvasRenderer.SetAlpha(0.0f);
@@ -32,9 +34,4 @@ public class SplashFade : MonoBehaviour
         splashImage.CrossFadeAlpha(0.0f, 2.5f, false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

@@ -5,18 +5,21 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
 
-    public int health = 10;
+    private int currenthealth;
+    public int maxhealth;
+    public Text healthtext;
 
-    public Text healthText;
+    public int Currenthealth { get => currenthealth; set => currenthealth = value; }
 
-    public int HealthProperties
+    private void Start()
     {
-        get => health;
-        set
-        {
-            health = value;
-
-            healthText.text = health.ToString();
-        }
+        Currenthealth = maxhealth;
     }
+
+    void Update()
+    {
+        healthtext.text = currenthealth.ToString();
+    }
+
+
 }
