@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 6309682839656014008}
   - component: {fileID: 8542046426250152481}
   - component: {fileID: 2620212616043627477}
-  - component: {fileID: 7900562288719257862}
   - component: {fileID: 9067421402593536906}
-  - component: {fileID: 5917084895193004435}
+  - component: {fileID: 6833909957450861999}
   m_Layer: 8
   m_Name: Wizard
-  m_TagString: Character
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7488300099377820189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.439, y: -0.64, z: -0.1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.124, y: -1.106, z: -0.1}
+  m_LocalScale: {x: 0.295, y: 0.295, z: 0.59}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 470037577
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 93ff177ca313e1f49810a73d494e77a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5ab3cd6ddc28aa4b99823f4bed3cd50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!50 &2620212616043627477
 Rigidbody2D:
@@ -104,22 +103,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7900562288719257862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7488300099377820189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decdffdd8ac47b5438850f16ba70aafa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Strength: 4
-  Defence: 4
-  Agility: 4
-  Luck: 2
 --- !u!58 &9067421402593536906
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133,10 +116,10 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.098870516, y: 0}
+  m_Offset: {x: -0.22057033, y: 0}
   serializedVersion: 2
-  m_Radius: 0.50036633
---- !u!114 &5917084895193004435
+  m_Radius: 0.6220662
+--- !u!114 &6833909957450861999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

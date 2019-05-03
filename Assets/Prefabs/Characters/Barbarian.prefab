@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 3127444541449589610}
   - component: {fileID: 6472072835738061029}
   - component: {fileID: 1150293670025021399}
-  - component: {fileID: 762310397016919007}
   - component: {fileID: 1985328086116373965}
-  - component: {fileID: 8488485714498822714}
+  - component: {fileID: 1828738305290901636}
   m_Layer: 8
   m_Name: Barbarian
   m_TagString: Character
@@ -29,9 +28,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4200428312294943234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.683806, y: 149.2364, z: -0.1}
-  m_LocalScale: {x: 0.21926114, y: 0.18408947, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: -5.915, y: 0.517, z: -0.1}
+  m_LocalScale: {x: 0.3464326, y: 0.29086137, z: 1.58}
+  m_Children:
+  - {fileID: 6123115796854843239}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 470037577
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56c15ca58078df04aa1a37bee0baa31b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7336de54a4ba5d74ea346f59e2612e35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,21 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &762310397016919007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200428312294943234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2663e1432596a4d8cd6af1a84bdc7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  levelname: FightScreen
-  joystick: {fileID: 0}
 --- !u!58 &1985328086116373965
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -132,10 +117,10 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9396992, y: 0}
+  m_Offset: {x: 0.55844736, y: 0}
   serializedVersion: 2
-  m_Radius: 0.83813643
---- !u!114 &8488485714498822714
+  m_Radius: 0.4568847
+--- !u!114 &1828738305290901636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,8 +129,86 @@ MonoBehaviour:
   m_GameObject: {fileID: 4200428312294943234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e924df7aeacf74abddbdb142f819c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e2663e1432596a4d8cd6af1a84bdc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  healthText: {fileID: 0}
+  moveSpeed: 3
+  joystick: {fileID: 0}
+--- !u!1 &6454669205400256416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6123115796854843239}
+  - component: {fileID: 7165390604848337659}
+  m_Layer: 8
+  m_Name: Vision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6123115796854843239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454669205400256416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.655, y: 0.091, z: 0}
+  m_LocalScale: {x: 9.564507, y: 11.050954, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3127444541449589610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!331 &7165390604848337659
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454669205400256416}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 25962eb4392bb1547b9e0dc3c25b8c55, type: 3}
+  m_MaskAlphaCutoff: 0.317
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0

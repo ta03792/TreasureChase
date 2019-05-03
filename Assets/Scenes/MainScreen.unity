@@ -112,6 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &40070413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 40070414}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &40070414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40070413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.57797, y: -1.6776893, z: -0.337617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &52425758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1252,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: '10
+
+'
 --- !u!222 &684980971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1607,11 +1639,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ninjaPrefab: {fileID: 8871361731558488431, guid: 96c8b60a2faed4a49a76e87f89670c99,
     type: 3}
-  piratePrefab: {fileID: 6142429748288794839, guid: 6399308b49cfeb6409a8a30294db66d1,
+  barbarianPrefab: {fileID: 4200428312294943234, guid: c34153160451f7a4b923a0b2876c4990,
     type: 3}
   wizardPrefab: {fileID: 7488300099377820189, guid: aa7ecf0ed09ac344f94ccc8d55af9af3,
     type: 3}
-  barbarianPrefab: {fileID: 4200428312294943234, guid: c34153160451f7a4b923a0b2876c4990,
+  piratePrefab: {fileID: 6142429748288794839, guid: 6399308b49cfeb6409a8a30294db66d1,
     type: 3}
   tilePrefab: {fileID: 9069191157575193217, guid: 5b44408debb73ca4bbfa264a447a5dc8,
     type: 3}
@@ -2668,7 +2700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  levelname: 
   joystick: {fileID: 0}
 --- !u!1 &1680193734
 GameObject:

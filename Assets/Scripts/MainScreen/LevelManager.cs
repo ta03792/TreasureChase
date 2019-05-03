@@ -4,13 +4,14 @@ using System.Collections;
 
 public class LevelManager : Singleton<LevelManager>
 {
-
     [SerializeField]
     private GameObject
         ninjaPrefab,
-        piratePrefab,
+        barbarianPrefab,
         wizardPrefab,
-        barbarianPrefab;    
+        piratePrefab;
+
+             
 
     private int number_of_traps;
 

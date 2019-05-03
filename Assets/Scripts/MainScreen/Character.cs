@@ -30,10 +30,16 @@ public class Character : MonoBehaviour
         }
     }
 
+    public int Health { get => health; set => health = value; }
+
+    private void Awake()
+    {
+        Health = 10;
+    }
+
     void Start()
     {
         SetPath(Path);
-        health = 10;
     }
 
     void Update()
@@ -118,7 +124,7 @@ public class Character : MonoBehaviour
 
     private void Die()
     {
-        if(health <= 0)
+        if(Health <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -128,7 +134,7 @@ public class Character : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("BearTrap"))
         {
-            health -= 2;
+            Health -= 2;
         }
         Destroy(collision.gameObject);
     }

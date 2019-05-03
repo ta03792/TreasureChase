@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b606de29671b5049be4b4879596cee8
+guid: d516f8b398cbc3d42914961c15e6bca1
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   fontNames:
   - Riky Vampdator Normal
   fallbackFontReferences:
-  - {fileID: 12800000, guid: d516f8b398cbc3d42914961c15e6bca1, type: 3}
+  - {fileID: 12800000, guid: 9cb3bd762290ce14282dce0263f3a308, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
