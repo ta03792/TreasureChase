@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile_P : MonoBehaviour
 {
     public float speed;
-    private Transform player;
+    private Transform Enemy;
     string target_id;
     private Vector2 target;
     private int i = 0;
-    
+
     //public void SetTarget(string targetName)
     //{
     //    target_id = targetName;
 
     //}
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-       
-        player = GameObject.Find("Player").transform;
-        name = "Projectile";
-        target = new Vector2(player.position.x, player.position.y);
+
+        Enemy = GameObject.Find("Enemy").transform;
+        name = "Projectile_P";
+        target = new Vector2(Enemy.position.x, Enemy.position.y);
 
     }
 
@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
         {
             //GetComponent<Health>().HealthProperties -= 2;
             //i = i + 1;
-           // if (i < 8)
+            // if (i < 8)
             //{ print(i); }
             DestroyProjectile();
         }
@@ -53,7 +53,7 @@ public class Projectile : MonoBehaviour
     //        //i = i + 1;
     //        //print(i);
     //        DestroyProjectile();
-            
+
     //    }
 
     //}
